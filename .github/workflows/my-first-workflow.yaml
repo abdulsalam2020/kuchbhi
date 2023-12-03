@@ -11,3 +11,11 @@ jobs:
         run: |
           java -version
           gradle -v
+
+  build-project:
+    runs-on: ubuntu-latest
+    needs:
+      - run-shell-commands
+    steps:
+      - name: build gradle project
+        run: gradle build
